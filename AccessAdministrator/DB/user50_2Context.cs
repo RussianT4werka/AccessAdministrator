@@ -8,6 +8,8 @@ namespace AccessAdministrator.DB
 {
     public partial class user50_2Context : DbContext
     {
+        
+
         public user50_2Context()
         {
         }
@@ -38,7 +40,7 @@ namespace AccessAdministrator.DB
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("server=192.168.200.35;user=user50;password=26643;database=user50_2;TrustServerCertificate=true");
+                optionsBuilder.UseSqlServer("server=192.168.200.35;user=user50;database=user50_2;password=26643;TrustServerCertificate=true");
             }
         }
 
@@ -143,6 +145,8 @@ namespace AccessAdministrator.DB
             modelBuilder.Entity<UserWorker>(entity =>
             {
                 entity.ToTable("UserWorker");
+
+                entity.Property(e => e.CanViewData).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.Gender).HasMaxLength(7);
 

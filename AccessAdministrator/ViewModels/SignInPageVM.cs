@@ -69,6 +69,20 @@ namespace AccessAdministrator.ViewModels
                             window.ShowDialog();
                             
                         }
+
+                        else if(SelectedType.Id == 2)
+                        {
+                            var window = new SecurityManagemenetWindow(userWorker);
+                            SelectedType = null;
+                            Login = null;
+                            password.Password = null;
+                            secretWord.Password = null;
+                            SignalChanged(nameof(SelectedType));
+                            SignalChanged(nameof(Login));
+                            SignalChanged(nameof(password.Password));
+                            SignalChanged(nameof(secretWord.Password));
+                            window.ShowDialog();
+                        }
                     }
                 }
                 catch

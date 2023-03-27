@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccessAdministrator.Views" xmlns:system="clr-namespace:System;assembly=netstandard"
         mc:Ignorable="d"
-        
         Title="Стражник - Управление доступом" MinHeight="500" MinWidth="750" MaxHeight="600" MaxWidth="850" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
