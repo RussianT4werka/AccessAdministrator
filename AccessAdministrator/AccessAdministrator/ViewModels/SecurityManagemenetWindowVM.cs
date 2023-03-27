@@ -76,6 +76,7 @@ namespace AccessAdministrator.ViewModels
                 }
                 user50_2Context.GetInstance().SaveChanges();
                 EditUserWorker = new List<UserWorker>(user50_2Context.GetInstance().UserWorkers.Include(s => s.Type).Include(s => s.Position).Where(s => s.Approved == 0).ToList());
+                AccessUserWorker = new List<UserWorker>(user50_2Context.GetInstance().UserWorkers.Include(s => s.Type).Include(s => s.Position).Where(s => s.Approved == 1 && s.CanAddData == 0 && s.CanViewData == 0 && s.CanReport == 0).ToList());
             });
 
             Apply = new Command(() =>
